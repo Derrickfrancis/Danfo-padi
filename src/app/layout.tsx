@@ -11,7 +11,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Danfo Padi",
-  description: "Know which bus or keke to take, how much to pay, and how to get there.",
+  description:
+    "Know which bus or keke to take, how much to pay, and how to get there.",
 };
 
 export const viewport: Viewport = {
@@ -20,7 +21,11 @@ export const viewport: Viewport = {
   themeColor: "#5B2BD6",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={jakarta.variable}>
       <body className="font-sans">{children}</body>

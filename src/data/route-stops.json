@@ -1,0 +1,47 @@
+[
+  {
+    "route_id": "route_keke_ishaga_mushin",
+    "stop_id": "stop_ishaga",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ishaga_mushin",
+    "stop_id": "stop_mushin",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_mushin_onipan",
+    "stop_id": "stop_mushin",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_mushin_onipan",
+    "stop_id": "stop_onipan",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_ishaga_oshodi",
+    "stop_id": "stop_ishaga",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_ishaga_oshodi",
+    "stop_id": "stop_oshodi",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_third_lane_hospital",
+    "stop_id": "stop_oshodi_third_lane",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_third_lane_hospital",
+    "stop_id": "stop_palmgrove",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_third_lane_hospital",
+    "stop_id": "stop_hospital",
+    "sequence": 2
+  }
+]
