@@ -29,8 +29,13 @@ export type JourneySummary = {
 };
 
 export function summarizeJourney(journey: Journey): JourneySummary {
-  let timeMin = 0;
-  let timeMax = 0;
+  // Walking to the first stop and from the last one, added by the search.
+  // Anything that is not a sensible number of minutes is ignored.
+  const extra = journey.extraWalkMinutes;
+  const extraWalk =
+    extra !== undefined && Number.isFinite(extra) && extra > 0 ? extra : 0;
+  let timeMin = extraWalk;
+  let timeMax = extraWalk;
   let fareMin = 0;
   let fareMax = 0;
   let rides = 0;

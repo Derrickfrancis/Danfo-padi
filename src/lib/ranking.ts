@@ -163,10 +163,10 @@ export function rankJourneys(journeys: readonly Journey[]): RankedJourney[] {
 }
 
 // The same journeys in the order a tab asks for. The original list is left alone.
-export function sortJourneys(
-  ranked: readonly RankedJourney[],
+export function sortJourneys<T extends RankedJourney>(
+  ranked: readonly T[],
   mode: SortMode,
-): RankedJourney[] {
+): T[] {
   const copy = [...ranked];
   if (mode === "cheapest") return copy.sort(compareCheapest);
   if (mode === "fastest") return copy.sort(compareFastest);

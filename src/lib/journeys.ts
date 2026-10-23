@@ -5,6 +5,10 @@ import { legsFrom, type Graph } from "./graph";
 export type Journey = {
   id: string; // the leg ids joined with ">", so the same journey always has the same id
   legs: readonly Segment[];
+  // Minutes of walking before and after the journey itself: from the person's
+  // place to the first stop, and from the last stop to where they are going.
+  // The search fills this in. A journey on its own does not have it.
+  extraWalkMinutes?: number;
 };
 
 export type SearchLimits = {
