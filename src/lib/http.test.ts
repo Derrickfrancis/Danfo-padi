@@ -57,4 +57,21 @@ describe("jsonResponse", () => {
     expect(response.headers.get("content-type")).toContain("application/json");
     expect(await response.json()).toEqual({ a: 1 });
   });
+
+  it("adds extra headers such as Retry-After", () => {
+    const response = jsonResponse({ error: "rate_limited" }, 429, {
+      "Retry-After": "30",
+    });
+    expect(response.status).toBe(429);
+    expect(response.headers.get("retry-after")).toBe("30");
+  });
+
+  it("never lets an extra header replace a safe one", () => {
+    const response = jsonResponse({}, 200, {
+      "Cache-Control": "public",
+      "Content-Type": "text/html",
+    });
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("content-type")).toContain("application/json");
+  });
 });

@@ -30,10 +30,16 @@ export async function readLimitedText(
 
 // A JSON answer with safe headers. "no-store" means browsers and proxies must
 // not keep a copy, and "nosniff" stops browsers from guessing it is something else.
-export function jsonResponse(data: unknown, status = 200): Response {
+export function jsonResponse(
+  data: unknown,
+  status = 200,
+  extraHeaders: Record<string, string> = {},
+): Response {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
+      // Extra headers go first, so they can never replace the safe ones below.
+      ...extraHeaders,
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
       "X-Content-Type-Options": "nosniff",
