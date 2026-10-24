@@ -22,6 +22,22 @@ const MAX_RESULTS = 20;
 
 // Finds and ranks every way to get from one place to another.
 // It takes the network as an argument, so it works with any data and is easy to test.
+// One possible trip, with the walks at each end.
+type Candidate = { journey: Journey; access: NearbyStop; egress: NearbyStop };
+
+// True when `shorter` just stops early on the way to the same place as `longer`.
+// That is: longer follows exactly the same legs, then only walks, and it does not
+// leave you farther from the destination. Example: riding to Onipan and guessing
+// the walk, when the data already has the real walk from Onipan to the hospital.
+function isShortcutOf(shorter: Candidate, longer: Candidate): boolean {
+  const a = shorter.journey.legs;
+  const b = longer.journey.legs;
+  if (b.length <= a.length) return false;
+  if (!a.every((leg, i) => b[i].id === leg.id)) return false;
+  if (!b.slice(a.length).every((leg) => leg.mode === "walk")) return false;
+  return longer.egress.walkMinutes <= shorter.egress.walkMinutes;
+}
+
 export function searchTrips(
   network: Pick<Network, "stops" | "segments">,
   origin: Point,
@@ -61,7 +77,14 @@ export function searchTrips(
     }
   }
 
-  const ranked = rankJourneys([...trips.values()].map((trip) => trip.journey));
+  // Leave out trips that only stop short of another trip that gets you there.
+  const candidates = [...trips.values()];
+  const kept = candidates.filter(
+    (trip) =>
+      !candidates.some((other) => other !== trip && isShortcutOf(trip, other)),
+  );
+
+  const ranked = rankJourneys(kept.map((trip) => trip.journey));
 
   return ranked.slice(0, MAX_RESULTS).flatMap((item) => {
     const trip = trips.get(item.journey.id);
