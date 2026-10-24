@@ -59,3 +59,19 @@ export function parseRoutesQuery(params: RawParams): RoutesQueryResult {
     },
   };
 }
+// Builds the address of a Routes page from places we have already checked.
+// "best" is the default order, so it is left out of the address.
+export function buildRoutesHref(
+  origin: Point,
+  destination: Point,
+  sort: SortMode,
+): string {
+  const params = new URLSearchParams({
+    olat: String(origin.lat),
+    olng: String(origin.lng),
+    dlat: String(destination.lat),
+    dlng: String(destination.lng),
+  });
+  if (sort !== "best") params.set("sort", sort);
+  return `/routes?${params.toString()}`;
+}

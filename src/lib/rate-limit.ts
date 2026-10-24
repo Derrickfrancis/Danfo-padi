@@ -86,7 +86,7 @@ export function createRateLimiter(options: RateLimiterOptions): RateLimiter {
 // Check this when we choose hosting. Run directly on the internet, a caller could fake them.
 const ADDRESS_PATTERN = /^[0-9a-fA-F:.]{1,45}$/;
 
-export function getClientKey(headers: Headers): string {
+export function getClientKey(headers: Pick<Headers, "get">): string {
   const forwarded = headers.get("x-forwarded-for")?.split(",")[0].trim();
   const real = headers.get("x-real-ip")?.trim();
 

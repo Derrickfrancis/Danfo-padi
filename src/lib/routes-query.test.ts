@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseRoutesQuery } from "./routes-query";
+import { buildRoutesHref, parseRoutesQuery } from "./routes-query";
 
 const good = { olat: "6.533", olng: "3.329", dlat: "6.53", dlng: "3.379" };
 
@@ -72,5 +72,29 @@ describe("parseRoutesQuery", () => {
     expect(parseRoutesQuery({ ...good, sort: undefined })).toEqual({
       ok: false,
     });
+  });
+});
+describe("buildRoutesHref", () => {
+  it("builds an address that parseRoutesQuery reads back exactly", () => {
+    const origin = { lat: 6.533, lng: 3.329 };
+    const destination = { lat: 6.53, lng: 3.379 };
+    for (const sort of ["best", "cheapest", "fastest"] as const) {
+      const href = buildRoutesHref(origin, destination, sort);
+      const params = Object.fromEntries(
+        new URL(href, "http://localhost").searchParams,
+      );
+      expect(parseRoutesQuery(params)).toEqual({
+        ok: true,
+        data: { origin, destination, sort },
+      });
+    }
+  });
+
+  it("leaves out the sort for the default order", () => {
+    const place = { lat: 6.5, lng: 3.3 };
+    expect(buildRoutesHref(place, place, "best")).toBe(
+      "/routes?olat=6.5&olng=3.3&dlat=6.5&dlng=3.3",
+    );
+    expect(buildRoutesHref(place, place, "fastest")).toContain("sort=fastest");
   });
 });

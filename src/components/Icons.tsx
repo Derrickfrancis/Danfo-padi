@@ -73,3 +73,10 @@ export const WarningIcon = (p: P) => (
     <path d="M12 10v5M12 18v.5" />
   </Svg>
 );
+
+export const CheckCircleIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M8 12.5l2.7 2.7L16 9.8" />
+  </Svg>
+);
