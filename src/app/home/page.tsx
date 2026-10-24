@@ -126,8 +126,6 @@ export default function HomePage() {
     e.preventDefault();
     if (!from || !to) return;
     const q = new URLSearchParams({
-      from: from.label,
-      to: to.label,
       olat: String(from.lat),
       olng: String(from.lng),
       dlat: String(to.lat),
