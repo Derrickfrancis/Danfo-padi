@@ -10,7 +10,7 @@ import type {
 import { scheduleLookup } from "@/lib/places-lookup";
 
 // Same minimum as the server's search: one letter would match too much to help.
-const MIN_QUERY_CHARS = 2;
+export const MIN_QUERY_CHARS = 2;
 
 // An answer, remembered together with the text it was asked for.
 type Answer = {
