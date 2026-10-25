@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { AppShell } from "@/components/AppShell";
 import { ChevronLeftIcon } from "@/components/Icons";
 import { RouteTabs } from "@/components/RouteTabs";
@@ -38,8 +38,52 @@ function Message({ title, text }: { title: string; text: ReactNode }) {
   );
 }
 
-export default async function RoutesPage({ searchParams }: RoutesPageProps) {
+// What shows for a moment while the search runs. It is the same shape as the real
+// screen, so nothing jumps when the cards arrive. It must not read anything per visitor.
+function RoutesLoading() {
+  return (
+    <AppShell>
+      <header className="flex items-center gap-3 px-6 pt-safe pb-4">
+        <Link href="/home" className={iconButton} aria-label="Back to home">
+          <ChevronLeftIcon />
+        </Link>
+        <div className="h-10 w-48 rounded-chip bg-primary-light motion-safe:animate-pulse" />
+      </header>
+      <div className="flex gap-2 px-6">
+        {[0, 1, 2].map((tab) => (
+          <div
+            key={tab}
+            className="h-11 w-24 rounded-pill bg-primary-light motion-safe:animate-pulse"
+          />
+        ))}
+      </div>
+      <div className="flex flex-col gap-4 px-6 pt-4" role="status">
+        {[0, 1].map((card) => (
+          <div
+            key={card}
+            className="h-72 rounded-card bg-primary-light motion-safe:animate-pulse"
+          />
+        ))}
+        <span className="sr-only">Finding routes...</span>
+      </div>
+    </AppShell>
+  );
+}
+
+// The page itself reads nothing per visitor. It hands the address to the part inside
+// the placeholder, so the loading screen can be sent to the phone immediately.
+export default function RoutesPage({ searchParams }: RoutesPageProps) {
+  return (
+    <Suspense fallback={<RoutesLoading />}>
+      <RoutesContent searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function RoutesContent({ searchParams }: RoutesPageProps) {
   // First gate: has this client searched too often?
+  // (Reading the headers comes first on purpose: the limiter looks at the clock, and
+  // Next.js only allows that once the request itself is known.)
   const rate = pageLimiter.check(getClientKey(await headers()));
   if (!rate.allowed) {
     return (
