@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 import Link from "next/link";
+import { connection } from "next/server";
 import { Suspense, type ReactNode } from "react";
 import { AppShell } from "@/components/AppShell";
 import { ChevronLeftIcon } from "@/components/Icons";
@@ -81,9 +82,11 @@ export default function RoutesPage({ searchParams }: RoutesPageProps) {
 }
 
 async function RoutesContent({ searchParams }: RoutesPageProps) {
+  // Says: everything below is decided fresh for each visitor, at the moment they arrive.
+  // The rate limiter reads the clock, and Next.js only allows that after this line.
+  await connection();
+
   // First gate: has this client searched too often?
-  // (Reading the headers comes first on purpose: the limiter looks at the clock, and
-  // Next.js only allows that once the request itself is known.)
   const rate = pageLimiter.check(getClientKey(await headers()));
   if (!rate.allowed) {
     return (
