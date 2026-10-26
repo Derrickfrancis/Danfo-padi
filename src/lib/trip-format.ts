@@ -107,3 +107,11 @@ export function buildTripRows(
 
   return rows;
 }
+
+// "Get off at National Orthopaedic Hospital", plus the walk if it is more than a step.
+export function describeEnd(egress: NearbyStop): string {
+  const base = `Get off at ${egress.stop.name}`;
+  return egress.walkMinutes > 0
+    ? `${base}, then walk about ${egress.walkMinutes} min`
+    : base;
+}

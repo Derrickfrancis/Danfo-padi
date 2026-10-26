@@ -1,9 +1,10 @@
 import { headers } from "next/headers";
 import Link from "next/link";
 import { connection } from "next/server";
-import { Suspense, type ReactNode } from "react";
+import { Suspense } from "react";
 import { AppShell } from "@/components/AppShell";
 import { ChevronLeftIcon } from "@/components/Icons";
+import { Message } from "@/components/Message";
 import { RouteTabs } from "@/components/RouteTabs";
 import { TripCard } from "@/components/TripCard";
 import { getNetwork } from "@/lib/data";
@@ -12,32 +13,13 @@ import { createRateLimiter, getClientKey } from "@/lib/rate-limit";
 import { parseRoutesQuery, type RawParams } from "@/lib/routes-query";
 import { searchTrips } from "@/lib/search";
 import { describeStart, viaLabel } from "@/lib/trip-format";
-import { iconButton, primaryButton } from "@/lib/ui";
+import { buildTripHref } from "@/lib/trip-query";
+import { iconButton } from "@/lib/ui";
 
 // Every visit to this page runs a search, so it has its own limit too.
 const pageLimiter = createRateLimiter({ limit: 30, windowMs: 60_000 });
 
 type RoutesPageProps = { searchParams: Promise<RawParams> };
-
-// A simple screen for when there is nothing to show: a bad link, too many tries, no routes.
-function Message({ title, text }: { title: string; text: ReactNode }) {
-  return (
-    <AppShell>
-      <header className="flex items-center gap-3 px-6 pt-safe pb-4">
-        <Link href="/home" className={iconButton} aria-label="Back to home">
-          <ChevronLeftIcon />
-        </Link>
-        <h1 className="text-lg font-extrabold">{title}</h1>
-      </header>
-      <div className="flex flex-col gap-4 px-6">
-        <p className="text-[15px] leading-normal text-muted">{text}</p>
-        <Link href="/home" className={primaryButton}>
-          Search again
-        </Link>
-      </div>
-    </AppShell>
-  );
-}
 
 // What shows for a moment while the search runs. It is the same shape as the real
 // screen, so nothing jumps when the cards arrive. It must not read anything per visitor.
@@ -156,6 +138,7 @@ async function RoutesContent({ searchParams }: RoutesPageProps) {
             trip={trip}
             title={viaLabel(trip.journey.legs, (id) => stopNames.get(id))}
             highlighted={sort !== "best" && index === 0}
+            detailHref={buildTripHref(origin, destination, trip.journey.id)}
           />
         ))}
       </div>

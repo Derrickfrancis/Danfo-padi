@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check-data": "vitest run src/lib/network-data.test.ts"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",

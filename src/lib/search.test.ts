@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import routesJson from "../data/routes.json";
-import routeStopsJson from "../data/route-stops.json";
-import segmentsJson from "../data/segments.json";
-import stopsJson from "../data/stops.json";
+import routesJson from "./fixtures/sample/routes.json";
+import routeStopsJson from "./fixtures/sample/route-stops.json";
+import segmentsJson from "./fixtures/sample/segments.json";
+import stopsJson from "./fixtures/sample/stops.json";
 import { NetworkSchema, type Segment, type Stop } from "./domain";
 import { sortJourneys } from "./ranking";
 import { searchTrips } from "./search";

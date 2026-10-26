@@ -1,0 +1,58 @@
+[
+  {
+    "id": "stop_ishaga",
+    "name": "Ishaga bus stop",
+    "area": "Isolo",
+    "lat": 6.533,
+    "lng": 3.329,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_mushin",
+    "name": "Mushin",
+    "area": "Mushin",
+    "lat": 6.534,
+    "lng": 3.352,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_onipan",
+    "name": "Onipan",
+    "area": "Onipan",
+    "lat": 6.536,
+    "lng": 3.377,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_oshodi",
+    "name": "Oshodi",
+    "area": "Oshodi",
+    "lat": 6.556,
+    "lng": 3.344,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_oshodi_third_lane",
+    "name": "Oshodi third lane",
+    "area": "Oshodi",
+    "lat": 6.555,
+    "lng": 3.348,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_palmgrove",
+    "name": "Palmgrove",
+    "area": "Palmgrove",
+    "lat": 6.546,
+    "lng": 3.368,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_hospital",
+    "name": "National Orthopaedic Hospital",
+    "area": "Igbobi",
+    "lat": 6.53,
+    "lng": 3.379,
+    "type": "bus_stop"
+  }
+]

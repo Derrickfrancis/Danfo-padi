@@ -1,0 +1,22 @@
+[
+  {
+    "id": "route_keke_ishaga_mushin",
+    "name": "Ishaga to Mushin (keke or korope)",
+    "mode": "keke"
+  },
+  {
+    "id": "route_bus_mushin_onipan",
+    "name": "Mushin to Onipan",
+    "mode": "bus"
+  },
+  {
+    "id": "route_bus_ishaga_oshodi",
+    "name": "Ishaga to Oshodi",
+    "mode": "bus"
+  },
+  {
+    "id": "route_bus_third_lane_hospital",
+    "name": "Oshodi third lane to the hospital via Palmgrove",
+    "mode": "bus"
+  }
+]

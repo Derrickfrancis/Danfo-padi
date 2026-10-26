@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import stopsJson from "../data/stops.json";
+import stopsJson from "./fixtures/sample/stops.json";
 import { StopSchema, type Stop } from "./domain";
 import { searchPlaces } from "./places";
 

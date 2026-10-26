@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import type { TripOption } from "@/lib/search";
 import {
@@ -15,6 +16,7 @@ type TripCardProps = {
   trip: TripOption;
   title: string; // for example "Via Mushin"
   highlighted: boolean; // outlined, like the top card on the Cheapest and Fastest tabs
+  detailHref: string; // where "Fare breakdown" goes
 };
 
 function Badge({ children }: { children: ReactNode }) {
@@ -26,7 +28,12 @@ function Badge({ children }: { children: ReactNode }) {
 }
 
 // One way of making the trip, with its fare, time, and every leg.
-export function TripCard({ trip, title, highlighted }: TripCardProps) {
+export function TripCard({
+  trip,
+  title,
+  highlighted,
+  detailHref,
+}: TripCardProps) {
   const { summary } = trip;
   const rows = buildTripRows(trip);
   const verified =
@@ -78,16 +85,15 @@ export function TripCard({ trip, title, highlighted }: TripCardProps) {
         ))}
       </ul>
 
-      {/* These two buttons are built in the next pieces. They are switched off until then. */}
+      {/* "Start" is built in a later piece. It is switched off until then. */}
       <div className="mt-4 flex gap-3">
-        <button
-          type="button"
-          disabled
-          title="Coming soon"
-          className="min-h-11 flex-1 rounded-field bg-primary-light text-sm font-bold text-primary disabled:cursor-not-allowed disabled:opacity-50"
+        <Link
+          href={detailHref}
+          prefetch={false}
+          className="flex min-h-11 flex-1 items-center justify-center rounded-field bg-primary-light text-sm font-bold text-primary"
         >
           Fare breakdown
-        </button>
+        </Link>
         <button
           type="button"
           disabled

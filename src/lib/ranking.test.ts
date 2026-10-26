@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import segmentsJson from "../data/segments.json";
+import segmentsJson from "./fixtures/sample/segments.json";
 import { SegmentSchema, type Segment } from "./domain";
 import { buildGraph } from "./graph";
 import { findJourneys, type Journey } from "./journeys";

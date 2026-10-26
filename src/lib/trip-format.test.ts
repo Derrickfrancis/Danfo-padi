@@ -1,13 +1,14 @@
 import { describe, expect, it } from "vitest";
-import routesJson from "../data/routes.json";
-import routeStopsJson from "../data/route-stops.json";
-import segmentsJson from "../data/segments.json";
-import stopsJson from "../data/stops.json";
+import routesJson from "./fixtures/sample/routes.json";
+import routeStopsJson from "./fixtures/sample/route-stops.json";
+import segmentsJson from "./fixtures/sample/segments.json";
+import stopsJson from "./fixtures/sample/stops.json";
 import { NetworkSchema, type Segment, type Stop } from "./domain";
 import { searchTrips } from "./search";
 import {
   buildTripRows,
   confidenceLabel,
+  describeEnd,
   describeStart,
   formatLegFare,
   formatMinutes,
@@ -174,5 +175,16 @@ describe("buildTripRows", () => {
       text: "Walk to Ishaga bus stop (about 7 min)",
       fare: "No fare",
     });
+  });
+});
+describe("describeEnd", () => {
+  it("says where to get off, and mentions the walk only when there is one", () => {
+    const hospitalStop = stop("stop_hospital");
+    expect(describeEnd({ stop: hospitalStop, meters: 0, walkMinutes: 0 })).toBe(
+      "Get off at National Orthopaedic Hospital",
+    );
+    expect(
+      describeEnd({ stop: hospitalStop, meters: 700, walkMinutes: 12 }),
+    ).toBe("Get off at National Orthopaedic Hospital, then walk about 12 min");
   });
 });
