@@ -10,8 +10,8 @@ import { getNetwork } from "@/lib/data";
 import { createRateLimiter, getClientKey } from "@/lib/rate-limit";
 import { buildRoutesHref, type RawParams } from "@/lib/routes-query";
 import { searchTrips } from "@/lib/search";
-import { parseTripQuery } from "@/lib/trip-query";
 import { viaLabel } from "@/lib/trip-format";
+import { buildTripHref, parseTripQuery } from "@/lib/trip-query";
 import { iconButton } from "@/lib/ui";
 
 // Every visit to this page runs a search, so it has its own limit too.
@@ -98,6 +98,13 @@ async function TripContent({ searchParams }: TripPageProps) {
   }
 
   const stopNames = new Map(network.stops.map((stop) => [stop.id, stop.name]));
+  const via = viaLabel(trip.journey.legs, (id) => stopNames.get(id));
+  const save = {
+    href: buildTripHref(origin, destination, tripId),
+    // Kept short enough that the saved list will always accept it.
+    title: `${trip.access.stop.area} to ${trip.egress.stop.name}`.slice(0, 200),
+    via: via.slice(0, 200),
+  };
 
   return (
     <AppShell>
@@ -113,12 +120,10 @@ async function TripContent({ searchParams }: TripPageProps) {
           <h1 className="text-lg leading-tight font-extrabold">
             Fare breakdown
           </h1>
-          <p className="text-[13px] text-muted">
-            {viaLabel(trip.journey.legs, (id) => stopNames.get(id))}
-          </p>
+          <p className="text-[13px] text-muted">{via}</p>
         </div>
       </header>
-      <FareBreakdown trip={trip} />
+      <FareBreakdown trip={trip} save={save} />
     </AppShell>
   );
 }

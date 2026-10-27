@@ -11,12 +11,19 @@ import {
 } from "@/lib/trip-format";
 import { primaryButton } from "@/lib/ui";
 import { CheckCircleIcon } from "./Icons";
+import { SaveTripButton } from "./SavedTripsButton";
 
 const secondaryButton =
   "flex min-h-11 w-full items-center justify-center rounded-field border border-line-mid bg-white text-sm font-bold text-primary disabled:cursor-not-allowed disabled:opacity-50";
 
+type FareBreakdownProps = {
+  trip: TripOption;
+  // What we keep if the person saves this trip: where to open it again, and two lines for the list.
+  save: { href: string; title: string; via: string };
+};
+
 // Every part of one trip, with what each part costs and the total.
-export function FareBreakdown({ trip }: { trip: TripOption }) {
+export function FareBreakdown({ trip, save }: FareBreakdownProps) {
   const { summary } = trip;
   const rows = buildTripRows(trip);
   const verified =
@@ -88,7 +95,7 @@ export function FareBreakdown({ trip }: { trip: TripOption }) {
         </p>
       </section>
 
-      {/* These three are built in later pieces. They are switched off until then. */}
+      {/* The first two are built in later pieces. They are switched off until then. */}
       <div className="flex flex-col gap-3">
         <button
           type="button"
@@ -106,14 +113,16 @@ export function FareBreakdown({ trip }: { trip: TripOption }) {
         >
           Report a wrong fare
         </button>
-        <button
-          type="button"
-          disabled
-          title="Coming soon"
-          className={secondaryButton}
-        >
-          Save this trip
-        </button>
+        <SaveTripButton
+          trip={{
+            href: save.href,
+            title: save.title,
+            via: save.via,
+            fareMin: summary.fareMin,
+            fareMax: summary.fareMax,
+            estimate: isEstimate(trip.journey.legs),
+          }}
+        />
       </div>
     </div>
   );
