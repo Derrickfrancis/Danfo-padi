@@ -13,8 +13,10 @@ import {
   WarningIcon,
 } from "@/components/Icons";
 import { PlaceField } from "@/components/PlaceField";
+import { useRecentPlaces } from "@/hooks/useRecentPlaces";
 import { LAGOS_BOUNDS } from "@/lib/api";
 import type { PlaceMatch } from "@/lib/places";
+import { rememberPlaces } from "@/lib/recent-places-store";
 import { primaryButton } from "@/lib/ui";
 
 type LocateStatus =
@@ -25,8 +27,9 @@ type LocateStatus =
   | "unsupported"
   | "outside";
 
-// A place the person has picked: a name to show, and a spot on the map to search from.
-type Chosen = { label: string; lat: number; lng: number };
+// A place the person has picked: a spot on the map to search from, and the suggestion it
+// came from (or nothing, when it is their own location).
+type Chosen = { lat: number; lng: number; place: PlaceMatch | null };
 
 const HINTS: Record<LocateStatus, string> = {
   idle: "Tap the target icon to use your location",
@@ -37,20 +40,8 @@ const HINTS: Record<LocateStatus, string> = {
   outside: "We only cover Lagos for now. Type where you dey.",
 };
 
-// Sample data for now. A later phase replaces this with the person's real recent searches.
-const RECENT_PLACES: PlaceMatch[] = [
-  {
-    id: "stop_hospital",
-    name: "National Orthopaedic Hospital",
-    area: "Igbobi",
-    lat: 6.53,
-    lng: 3.379,
-  },
-  { id: "stop_oshodi", name: "Oshodi", area: "Oshodi", lat: 6.556, lng: 3.344 },
-];
-
 function toChosen(place: PlaceMatch): Chosen {
-  return { label: place.name, lat: place.lat, lng: place.lng };
+  return { lat: place.lat, lng: place.lng, place };
 }
 
 function isInsideLagos(lat: number, lng: number): boolean {
@@ -70,6 +61,7 @@ function roundForPrivacy(value: number): number {
 
 export default function HomePage() {
   const router = useRouter();
+  const recentPlaces = useRecentPlaces();
   const [fromText, setFromText] = useState("");
   const [from, setFrom] = useState<Chosen | null>(null);
   const [toText, setToText] = useState("");
@@ -91,7 +83,7 @@ export default function HomePage() {
           return;
         }
         setFromText("My current location");
-        setFrom({ label: "My current location", lat, lng });
+        setFrom({ lat, lng, place: null });
         setStatus("found");
       },
       () => setStatus("denied"),
@@ -125,6 +117,15 @@ export default function HomePage() {
   function findRoutes(e: FormEvent) {
     e.preventDefault();
     if (!from || !to) return;
+
+    // Remember the named places that were searched, with the destination last so it is newest.
+    // Your own location is never kept, only places from our list.
+    rememberPlaces(
+      [from.place, to.place].filter(
+        (place): place is PlaceMatch => place !== null,
+      ),
+    );
+
     const q = new URLSearchParams({
       olat: String(from.lat),
       olng: String(from.lng),
@@ -146,9 +147,9 @@ export default function HomePage() {
   return (
     <AppShell>
       <form id="route-search" onSubmit={findRoutes}>
-        <div className="rounded-b-sheet bg-primary px-6 pt-safe pb5.5 text-white">
+        <div className="rounded-b-sheet bg-primary px-6 pt-safe pb-[22px] text-white">
           <div className="text-lg font-extrabold">Danfo Padi</div>
-          <h1 className="mt-4 mb-4.5 text-[28px] leading-[1.2] font-extrabold">
+          <h1 className="mt-4 mb-[18px] text-[28px] leading-[1.2] font-extrabold">
             Know which bus or keke to take
           </h1>
 
@@ -225,23 +226,27 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <h2 className="mt-1 text-sm font-bold text-muted">Recent places</h2>
-        <ul className="flex flex-col gap-3.5">
-          {RECENT_PLACES.map((place) => (
-            <li key={place.id}>
-              <button
-                type="button"
-                className="flex min-h-11 w-full items-center gap-3.5 border-0 bg-transparent p-0 text-left text-base font-semibold"
-                onClick={() => pickTo(place)}
-              >
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-primary-light text-primary">
-                  <PinIcon />
-                </span>
-                {place.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {recentPlaces.length > 0 && (
+          <>
+            <h2 className="mt-1 text-sm font-bold text-muted">Recent places</h2>
+            <ul className="flex flex-col gap-3.5">
+              {recentPlaces.map((place) => (
+                <li key={place.id}>
+                  <button
+                    type="button"
+                    className="flex min-h-11 w-full items-center gap-3.5 border-0 bg-transparent p-0 text-left text-base font-semibold"
+                    onClick={() => pickTo(place)}
+                  >
+                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-primary-light text-primary">
+                      <PinIcon />
+                    </span>
+                    {place.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
 
       <BottomNav />
