@@ -9,8 +9,10 @@ import {
   formatNaira,
   isEstimate,
 } from "@/lib/trip-format";
+import type { TripMapData } from "@/lib/trip-map";
 import { primaryButton } from "@/lib/ui";
 import { CheckCircleIcon } from "./Icons";
+import { RouteMap } from "./RouteMap";
 import { SaveTripButton } from "./SavedTripsButton";
 
 const secondaryButton =
@@ -20,10 +22,12 @@ type FareBreakdownProps = {
   trip: TripOption;
   // What we keep if the person saves this trip: where to open it again, and two lines for the list.
   save: { href: string; title: string; via: string };
+  // The line and dots for the map.
+  map: TripMapData;
 };
 
 // Every part of one trip, with what each part costs and the total.
-export function FareBreakdown({ trip, save }: FareBreakdownProps) {
+export function FareBreakdown({ trip, save, map }: FareBreakdownProps) {
   const { summary } = trip;
   const rows = buildTripRows(trip);
   const verified =
@@ -95,6 +99,7 @@ export function FareBreakdown({ trip, save }: FareBreakdownProps) {
         </p>
       </section>
 
+      <RouteMap data={map} />
       {/* The first two are built in later pieces. They are switched off until then. */}
       <div className="flex flex-col gap-3">
         <button

@@ -10,6 +10,7 @@ import { getNetwork } from "@/lib/data";
 import { createRateLimiter, getClientKey } from "@/lib/rate-limit";
 import { buildRoutesHref, type RawParams } from "@/lib/routes-query";
 import { searchTrips } from "@/lib/search";
+import { buildTripMap } from "@/lib/trip-map";
 import { viaLabel } from "@/lib/trip-format";
 import { buildTripHref, parseTripQuery } from "@/lib/trip-query";
 import { iconButton } from "@/lib/ui";
@@ -97,8 +98,9 @@ async function TripContent({ searchParams }: TripPageProps) {
     );
   }
 
-  const stopNames = new Map(network.stops.map((stop) => [stop.id, stop.name]));
-  const via = viaLabel(trip.journey.legs, (id) => stopNames.get(id));
+  const stopById = new Map(network.stops.map((stop) => [stop.id, stop]));
+  const via = viaLabel(trip.journey.legs, (id) => stopById.get(id)?.name);
+  const map = buildTripMap(trip, (id) => stopById.get(id), origin, destination);
   const save = {
     href: buildTripHref(origin, destination, tripId),
     // Kept short enough that the saved list will always accept it.
@@ -123,7 +125,7 @@ async function TripContent({ searchParams }: TripPageProps) {
           <p className="text-[13px] text-muted">{via}</p>
         </div>
       </header>
-      <FareBreakdown trip={trip} save={save} />
+      <FareBreakdown trip={trip} save={save} map={map} />
     </AppShell>
   );
 }

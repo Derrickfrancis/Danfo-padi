@@ -90,12 +90,81 @@ describe("the other security headers", () => {
   });
 });
 
+describe("the policy for pages that show a map", () => {
+  const plain = directivesOf(buildContentSecurityPolicy(false));
+  const withMaps = directivesOf(buildContentSecurityPolicy(false, true));
+
+  it("adds only named Google hosts, over https, with no wildcards", () => {
+    const googleHosts = new Set([
+      "https://maps.googleapis.com",
+      "https://maps.gstatic.com",
+      "https://mapsresources-pa.googleapis.com",
+      "https://khms0.googleapis.com",
+      "https://khms1.googleapis.com",
+      "https://khms2.googleapis.com",
+      "https://khms3.googleapis.com",
+      "https://fonts.googleapis.com",
+      "https://fonts.gstatic.com",
+    ]);
+    const ours = new Set([
+      "'self'",
+      "'none'",
+      "'unsafe-inline'",
+      "blob:",
+      "data:",
+    ]);
+    for (const [name, sources] of Object.entries(withMaps)) {
+      for (const source of sources) {
+        expect(
+          ours.has(source) || googleHosts.has(source),
+          `${name} allows ${source}`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("keeps everything else as strict as the other pages", () => {
+    for (const name of [
+      "default-src",
+      "object-src",
+      "base-uri",
+      "form-action",
+      "frame-ancestors",
+    ]) {
+      expect(withMaps[name]).toEqual(plain[name]);
+    }
+    expect(withMaps["script-src"]).toEqual([
+      "'self'",
+      "'unsafe-inline'",
+      "https://maps.googleapis.com",
+    ]);
+    expect(withMaps["script-src"]).not.toContain("'unsafe-eval'");
+  });
+
+  it("loosens the referrer rule only as far as the map needs, and only on map pages", () => {
+    expect(headerValue(false, "Referrer-Policy")).toBe("same-origin");
+    const mapPage = buildSecurityHeaders(false, true).find(
+      (header) => header.key === "Referrer-Policy",
+    )?.value;
+    expect(mapPage).toBe("strict-origin-when-cross-origin");
+  });
+
+  it("never mentions Google on the pages that have no map", () => {
+    for (const isDevelopment of [false, true]) {
+      expect(buildContentSecurityPolicy(isDevelopment)).not.toMatch(
+        /google|gstatic/,
+      );
+    }
+  });
+});
+
 describe("the site settings", () => {
-  it("apply the headers to every page and hide the framework name", async () => {
+  it("apply the strict headers to every page, the map headers to map pages, and hide the framework name", async () => {
     expect(nextConfig.poweredByHeader).toBe(false);
     // The test runs outside development, so it should get the production headers.
     expect(await nextConfig.headers?.()).toEqual([
       { source: "/:path*", headers: buildSecurityHeaders(false) },
+      { source: "/trip", headers: buildSecurityHeaders(false, true) },
     ]);
   });
 });
