@@ -1,0 +1,158 @@
+[
+  {
+    "id": "stop_isolo_market",
+    "name": "Isolo market",
+    "area": "Isolo",
+    "lat": 6.529962,
+    "lng": 3.331985,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_college_bus_stop",
+    "name": "College Bus stop",
+    "local_alias": "College",
+    "area": "Isolo",
+    "lat": 6.53024,
+    "lng": 3.32823,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_iyana_isolo",
+    "name": "Iyana Isolo",
+    "area": "Isolo",
+    "lat": 6.5292,
+    "lng": 3.3217,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_ago_round_about",
+    "name": "Ago Round-about",
+    "local_alias": "Round about or Okota",
+    "area": "Isolo",
+    "lat": 6.5166,
+    "lng": 3.3191,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_kpako",
+    "name": "Kpako",
+    "local_alias": "Mass burial",
+    "area": "Isolo",
+    "lat": 6.5291,
+    "lng": 3.3217,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_aye",
+    "name": "Aye",
+    "local_alias": "Aye",
+    "area": "Isolo",
+    "lat": 6.5312,
+    "lng": 3.3214,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_7_and_8",
+    "name": "7 and 8",
+    "local_alias": "7,8",
+    "area": "Isolo",
+    "lat": 6.5332,
+    "lng": 3.3214,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_general_hospital",
+    "name": "General Hospital",
+    "local_alias": "General Hospital",
+    "area": "Isolo",
+    "lat": 6.5267,
+    "lng": 3.3182,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_iyan_oja",
+    "name": "Iyan-oja",
+    "area": "Isolo",
+    "lat": 6.5315,
+    "lng": 3.3241,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_ishaga_bus_stop",
+    "name": "Ishaga bus stop",
+    "local_alias": "Ishaga",
+    "area": "Isolo",
+    "lat": 6.52667,
+    "lng": 3.32583,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_nnpc_isolo",
+    "name": "NNPC Isolo",
+    "local_alias": "Old English or Tantalizer",
+    "area": "Isolo",
+    "lat": 6.5299,
+    "lng": 3.332,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_ejigbo",
+    "name": "Ejigbo",
+    "local_alias": "Ejigbo",
+    "area": "Isolo",
+    "lat": 6.55072,
+    "lng": 3.30672,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_cele",
+    "name": "Cele",
+    "local_alias": "Express",
+    "area": "Isolo",
+    "lat": 6.5058,
+    "lng": 3.3228,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_cele_egbe",
+    "name": "Cele-Egbe",
+    "area": "Alimosho",
+    "lat": 6.5369,
+    "lng": 3.2827,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_ilasa",
+    "name": "Ilasa",
+    "area": "Isolo",
+    "lat": 6.5244,
+    "lng": 3.3364,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_oshodi",
+    "name": "Oshodi",
+    "local_alias": "Oshodi",
+    "area": "Oshodi",
+    "lat": 6.55504,
+    "lng": 3.34363,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_ago",
+    "name": "Ago",
+    "area": "Okota",
+    "lat": 6.5022,
+    "lng": 3.3051,
+    "type": "bus_stop"
+  },
+  {
+    "id": "stop_awani",
+    "name": "Awani",
+    "local_alias": "Aswani Market or Local gov",
+    "area": "Isolo",
+    "lat": 6.53957,
+    "lng": 3.33122,
+    "type": "keke_park"
+  }
+]

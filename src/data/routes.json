@@ -1,22 +1,434 @@
 [
   {
-    "id": "route_keke_ishaga_mushin",
-    "name": "Ishaga to Mushin (keke or korope)",
-    "mode": "keke"
+    "route_id": "route_keke_iyana_isolo_isolo_market",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 0
   },
   {
-    "id": "route_bus_mushin_onipan",
-    "name": "Mushin to Onipan",
-    "mode": "bus"
+    "route_id": "route_keke_iyana_isolo_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
   },
   {
-    "id": "route_bus_ishaga_oshodi",
-    "name": "Ishaga to Oshodi",
-    "mode": "bus"
+    "route_id": "route_keke_iyana_isolo_college_bus_stop",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 0
   },
   {
-    "id": "route_bus_third_lane_hospital",
-    "name": "Oshodi third lane to the hospital via Palmgrove",
-    "mode": "bus"
+    "route_id": "route_keke_iyana_isolo_college_bus_stop",
+    "stop_id": "stop_college_bus_stop",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_iyana_isolo_aye",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_iyana_isolo_aye",
+    "stop_id": "stop_aye",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_college_bus_stop",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_college_bus_stop",
+    "stop_id": "stop_college_bus_stop",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_aye",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_aye",
+    "stop_id": "stop_aye",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_ishaga_bus_stop",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_ishaga_bus_stop",
+    "stop_id": "stop_ishaga_bus_stop",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_nnpc_isolo",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_nnpc_isolo",
+    "stop_id": "stop_nnpc_isolo",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_aye_isolo_market",
+    "stop_id": "stop_aye",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_aye_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ishaga_bus_stop_isolo_market",
+    "stop_id": "stop_ishaga_bus_stop",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ishaga_bus_stop_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_nnpc_isolo_isolo_market",
+    "stop_id": "stop_nnpc_isolo",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_nnpc_isolo_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_ago_round_about",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_ago_round_about",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ago_round_about_isolo_market",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ago_round_about_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  { "route_id": "route_keke_aye_kpako", "stop_id": "stop_aye", "sequence": 0 },
+  {
+    "route_id": "route_keke_aye_kpako",
+    "stop_id": "stop_kpako",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_kpako_aye",
+    "stop_id": "stop_kpako",
+    "sequence": 0
+  },
+  { "route_id": "route_keke_kpako_aye", "stop_id": "stop_aye", "sequence": 1 },
+  {
+    "route_id": "route_keke_iyana_isolo_general_hospital",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_iyana_isolo_general_hospital",
+    "stop_id": "stop_general_hospital",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_general_hospital_iyana_isolo",
+    "stop_id": "stop_general_hospital",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_general_hospital_iyana_isolo",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_college_bus_stop_general_hospital",
+    "stop_id": "stop_college_bus_stop",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_college_bus_stop_general_hospital",
+    "stop_id": "stop_general_hospital",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_college_bus_stop_kpako",
+    "stop_id": "stop_college_bus_stop",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_college_bus_stop_kpako",
+    "stop_id": "stop_kpako",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_kpako_college_bus_stop",
+    "stop_id": "stop_kpako",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_kpako_college_bus_stop",
+    "stop_id": "stop_college_bus_stop",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_kpako_ago_round_about",
+    "stop_id": "stop_kpako",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_kpako_ago_round_about",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_kpako_iyan_oja",
+    "stop_id": "stop_kpako",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_kpako_iyan_oja",
+    "stop_id": "stop_iyan_oja",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_iyan_oja_kpako",
+    "stop_id": "stop_iyan_oja",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_iyan_oja_kpako",
+    "stop_id": "stop_kpako",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ago_round_about_kpako",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ago_round_about_kpako",
+    "stop_id": "stop_kpako",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_isolo_market_ilasa",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_isolo_market_ilasa",
+    "stop_id": "stop_ilasa",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ilasa_isolo_market",
+    "stop_id": "stop_ilasa",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ilasa_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_isolo_market_ago",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_isolo_market_ago",
+    "stop_id": "stop_ago",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_ago_isolo_market",
+    "stop_id": "stop_ago",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_ago_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ago_round_about_ago",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ago_round_about_ago",
+    "stop_id": "stop_ago",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ago_ago_round_about",
+    "stop_id": "stop_ago",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ago_ago_round_about",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_aye_7_and_8",
+    "stop_id": "stop_aye",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_aye_7_and_8",
+    "stop_id": "stop_7_and_8",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_7_and_8_aye",
+    "stop_id": "stop_7_and_8",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_7_and_8_aye",
+    "stop_id": "stop_aye",
+    "sequence": 1
+  },
+  { "route_id": "route_keke_aye_awani", "stop_id": "stop_aye", "sequence": 0 },
+  {
+    "route_id": "route_keke_aye_awani",
+    "stop_id": "stop_awani",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_awani_aye",
+    "stop_id": "stop_awani",
+    "sequence": 0
+  },
+  { "route_id": "route_keke_awani_aye", "stop_id": "stop_aye", "sequence": 1 },
+  {
+    "route_id": "route_keke_awani_7_and_8",
+    "stop_id": "stop_awani",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_awani_7_and_8",
+    "stop_id": "stop_7_and_8",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_7_and_8_awani",
+    "stop_id": "stop_7_and_8",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_7_and_8_awani",
+    "stop_id": "stop_awani",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_oshodi_iyana_isolo",
+    "stop_id": "stop_oshodi",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_oshodi_iyana_isolo",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_iyana_isolo_oshodi",
+    "stop_id": "stop_iyana_isolo",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_iyana_isolo_oshodi",
+    "stop_id": "stop_oshodi",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_oshodi_cele",
+    "stop_id": "stop_oshodi",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_oshodi_cele",
+    "stop_id": "stop_cele",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_oshodi_isolo_market",
+    "stop_id": "stop_oshodi",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_oshodi_isolo_market",
+    "stop_id": "stop_isolo_market",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_cele_oshodi",
+    "stop_id": "stop_cele",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_cele_oshodi",
+    "stop_id": "stop_oshodi",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_bus_isolo_market_oshodi",
+    "stop_id": "stop_isolo_market",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_isolo_market_oshodi",
+    "stop_id": "stop_oshodi",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_ago_round_about_cele",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_ago_round_about_cele",
+    "stop_id": "stop_cele",
+    "sequence": 1
+  },
+  {
+    "route_id": "route_keke_cele_ago_round_about",
+    "stop_id": "stop_cele",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_keke_cele_ago_round_about",
+    "stop_id": "stop_ago_round_about",
+    "sequence": 1
+  },
+  { "route_id": "route_keke_ago_cele", "stop_id": "stop_ago", "sequence": 0 },
+  { "route_id": "route_keke_ago_cele", "stop_id": "stop_cele", "sequence": 1 },
+  { "route_id": "route_bus_cele_ago", "stop_id": "stop_cele", "sequence": 0 },
+  { "route_id": "route_bus_cele_ago", "stop_id": "stop_ago", "sequence": 1 },
+  { "route_id": "route_keke_cele_ago", "stop_id": "stop_cele", "sequence": 0 },
+  { "route_id": "route_keke_cele_ago", "stop_id": "stop_ago", "sequence": 1 },
+  { "route_id": "route_bus_ago_cele", "stop_id": "stop_ago", "sequence": 0 },
+  { "route_id": "route_bus_ago_cele", "stop_id": "stop_cele", "sequence": 1 },
+  {
+    "route_id": "route_bus_oshodi_cele_egbe",
+    "stop_id": "stop_oshodi",
+    "sequence": 0
+  },
+  {
+    "route_id": "route_bus_oshodi_cele_egbe",
+    "stop_id": "stop_cele_egbe",
+    "sequence": 1
   }
 ]
