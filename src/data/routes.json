@@ -1,434 +1,194 @@
 [
   {
-    "route_id": "route_keke_iyana_isolo_isolo_market",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 0
+    "id": "route_keke_iyana_isolo_isolo_market",
+    "name": "Iyana Isolo to Isolo market",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_iyana_isolo_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
+    "id": "route_keke_iyana_isolo_college_bus_stop",
+    "name": "Iyana Isolo to College Bus stop",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_iyana_isolo_college_bus_stop",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 0
+    "id": "route_keke_iyana_isolo_aye",
+    "name": "Iyana Isolo to Aye",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_iyana_isolo_college_bus_stop",
-    "stop_id": "stop_college_bus_stop",
-    "sequence": 1
+    "id": "route_keke_isolo_market_college_bus_stop",
+    "name": "Isolo market to College Bus stop",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_iyana_isolo_aye",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 0
+    "id": "route_keke_isolo_market_aye",
+    "name": "Isolo market to Aye",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_iyana_isolo_aye",
-    "stop_id": "stop_aye",
-    "sequence": 1
+    "id": "route_keke_isolo_market_ishaga_bus_stop",
+    "name": "Isolo market to Ishaga bus stop",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_college_bus_stop",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
+    "id": "route_keke_isolo_market_nnpc_isolo",
+    "name": "Isolo market to NNPC Isolo",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_college_bus_stop",
-    "stop_id": "stop_college_bus_stop",
-    "sequence": 1
+    "id": "route_keke_aye_isolo_market",
+    "name": "Aye to Isolo market",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_aye",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
+    "id": "route_keke_ishaga_bus_stop_isolo_market",
+    "name": "Ishaga bus stop to Isolo market",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_aye",
-    "stop_id": "stop_aye",
-    "sequence": 1
+    "id": "route_keke_nnpc_isolo_isolo_market",
+    "name": "NNPC Isolo to Isolo market",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_ishaga_bus_stop",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
+    "id": "route_keke_isolo_market_ago_round_about",
+    "name": "Isolo market to Ago Round-about",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_ishaga_bus_stop",
-    "stop_id": "stop_ishaga_bus_stop",
-    "sequence": 1
+    "id": "route_keke_ago_round_about_isolo_market",
+    "name": "Ago Round-about to Isolo market",
+    "mode": "keke"
   },
+  { "id": "route_keke_aye_kpako", "name": "Aye to Kpako", "mode": "keke" },
+  { "id": "route_keke_kpako_aye", "name": "Kpako to Aye", "mode": "keke" },
   {
-    "route_id": "route_keke_isolo_market_nnpc_isolo",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
+    "id": "route_keke_iyana_isolo_general_hospital",
+    "name": "Iyana Isolo to General Hospital",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_nnpc_isolo",
-    "stop_id": "stop_nnpc_isolo",
-    "sequence": 1
+    "id": "route_keke_general_hospital_iyana_isolo",
+    "name": "General Hospital to Iyana Isolo",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_aye_isolo_market",
-    "stop_id": "stop_aye",
-    "sequence": 0
+    "id": "route_keke_college_bus_stop_general_hospital",
+    "name": "College Bus stop to General Hospital",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_aye_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
+    "id": "route_keke_college_bus_stop_kpako",
+    "name": "College Bus stop to Kpako",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_ishaga_bus_stop_isolo_market",
-    "stop_id": "stop_ishaga_bus_stop",
-    "sequence": 0
+    "id": "route_keke_kpako_college_bus_stop",
+    "name": "Kpako to College Bus stop",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_ishaga_bus_stop_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
+    "id": "route_keke_kpako_ago_round_about",
+    "name": "Kpako to Ago Round-about",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_nnpc_isolo_isolo_market",
-    "stop_id": "stop_nnpc_isolo",
-    "sequence": 0
+    "id": "route_keke_kpako_iyan_oja",
+    "name": "Kpako to Iyan-oja",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_nnpc_isolo_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
+    "id": "route_keke_iyan_oja_kpako",
+    "name": "Iyan-oja to Kpako",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_ago_round_about",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
+    "id": "route_keke_ago_round_about_kpako",
+    "name": "Ago Round-about to Kpako",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_isolo_market_ago_round_about",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 1
+    "id": "route_keke_isolo_market_ilasa",
+    "name": "Isolo market to Ilasa",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_ago_round_about_isolo_market",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 0
+    "id": "route_keke_ilasa_isolo_market",
+    "name": "Ilasa to Isolo market",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_ago_round_about_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
+    "id": "route_bus_isolo_market_ago",
+    "name": "Isolo market to Ago",
+    "mode": "bus"
   },
-  { "route_id": "route_keke_aye_kpako", "stop_id": "stop_aye", "sequence": 0 },
   {
-    "route_id": "route_keke_aye_kpako",
-    "stop_id": "stop_kpako",
-    "sequence": 1
+    "id": "route_bus_ago_isolo_market",
+    "name": "Ago to Isolo market",
+    "mode": "bus"
   },
   {
-    "route_id": "route_keke_kpako_aye",
-    "stop_id": "stop_kpako",
-    "sequence": 0
+    "id": "route_keke_ago_round_about_ago",
+    "name": "Ago Round-about to Ago",
+    "mode": "keke"
   },
-  { "route_id": "route_keke_kpako_aye", "stop_id": "stop_aye", "sequence": 1 },
   {
-    "route_id": "route_keke_iyana_isolo_general_hospital",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 0
+    "id": "route_keke_ago_ago_round_about",
+    "name": "Ago to Ago Round-about",
+    "mode": "keke"
   },
+  { "id": "route_keke_aye_7_and_8", "name": "Aye to 7 and 8", "mode": "keke" },
+  { "id": "route_keke_7_and_8_aye", "name": "7 and 8 to Aye", "mode": "keke" },
+  { "id": "route_keke_aye_awani", "name": "Aye to Awani", "mode": "keke" },
+  { "id": "route_keke_awani_aye", "name": "Awani to Aye", "mode": "keke" },
   {
-    "route_id": "route_keke_iyana_isolo_general_hospital",
-    "stop_id": "stop_general_hospital",
-    "sequence": 1
+    "id": "route_keke_awani_7_and_8",
+    "name": "Awani to 7 and 8",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_general_hospital_iyana_isolo",
-    "stop_id": "stop_general_hospital",
-    "sequence": 0
+    "id": "route_keke_7_and_8_awani",
+    "name": "7 and 8 to Awani",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_general_hospital_iyana_isolo",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 1
+    "id": "route_bus_oshodi_iyana_isolo",
+    "name": "Oshodi to Iyana Isolo",
+    "mode": "bus"
   },
   {
-    "route_id": "route_keke_college_bus_stop_general_hospital",
-    "stop_id": "stop_college_bus_stop",
-    "sequence": 0
+    "id": "route_bus_iyana_isolo_oshodi",
+    "name": "Iyana Isolo to Oshodi",
+    "mode": "bus"
   },
+  { "id": "route_bus_oshodi_cele", "name": "Oshodi to Cele", "mode": "bus" },
   {
-    "route_id": "route_keke_college_bus_stop_general_hospital",
-    "stop_id": "stop_general_hospital",
-    "sequence": 1
+    "id": "route_bus_oshodi_isolo_market",
+    "name": "Oshodi to Isolo market",
+    "mode": "bus"
   },
+  { "id": "route_bus_cele_oshodi", "name": "Cele to Oshodi", "mode": "bus" },
   {
-    "route_id": "route_keke_college_bus_stop_kpako",
-    "stop_id": "stop_college_bus_stop",
-    "sequence": 0
+    "id": "route_bus_isolo_market_oshodi",
+    "name": "Isolo market to Oshodi",
+    "mode": "bus"
   },
   {
-    "route_id": "route_keke_college_bus_stop_kpako",
-    "stop_id": "stop_kpako",
-    "sequence": 1
+    "id": "route_keke_ago_round_about_cele",
+    "name": "Ago Round-about to Cele",
+    "mode": "keke"
   },
   {
-    "route_id": "route_keke_kpako_college_bus_stop",
-    "stop_id": "stop_kpako",
-    "sequence": 0
+    "id": "route_keke_cele_ago_round_about",
+    "name": "Cele to Ago Round-about",
+    "mode": "keke"
   },
+  { "id": "route_keke_ago_cele", "name": "Ago to Cele", "mode": "keke" },
+  { "id": "route_bus_cele_ago", "name": "Cele to Ago", "mode": "bus" },
+  { "id": "route_keke_cele_ago", "name": "Cele to Ago", "mode": "keke" },
+  { "id": "route_bus_ago_cele", "name": "Ago to Cele", "mode": "bus" },
   {
-    "route_id": "route_keke_kpako_college_bus_stop",
-    "stop_id": "stop_college_bus_stop",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_kpako_ago_round_about",
-    "stop_id": "stop_kpako",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_kpako_ago_round_about",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_kpako_iyan_oja",
-    "stop_id": "stop_kpako",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_kpako_iyan_oja",
-    "stop_id": "stop_iyan_oja",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_iyan_oja_kpako",
-    "stop_id": "stop_iyan_oja",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_iyan_oja_kpako",
-    "stop_id": "stop_kpako",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_ago_round_about_kpako",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_ago_round_about_kpako",
-    "stop_id": "stop_kpako",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_isolo_market_ilasa",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_isolo_market_ilasa",
-    "stop_id": "stop_ilasa",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_ilasa_isolo_market",
-    "stop_id": "stop_ilasa",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_ilasa_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_isolo_market_ago",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_isolo_market_ago",
-    "stop_id": "stop_ago",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_ago_isolo_market",
-    "stop_id": "stop_ago",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_ago_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_ago_round_about_ago",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_ago_round_about_ago",
-    "stop_id": "stop_ago",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_ago_ago_round_about",
-    "stop_id": "stop_ago",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_ago_ago_round_about",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_aye_7_and_8",
-    "stop_id": "stop_aye",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_aye_7_and_8",
-    "stop_id": "stop_7_and_8",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_7_and_8_aye",
-    "stop_id": "stop_7_and_8",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_7_and_8_aye",
-    "stop_id": "stop_aye",
-    "sequence": 1
-  },
-  { "route_id": "route_keke_aye_awani", "stop_id": "stop_aye", "sequence": 0 },
-  {
-    "route_id": "route_keke_aye_awani",
-    "stop_id": "stop_awani",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_awani_aye",
-    "stop_id": "stop_awani",
-    "sequence": 0
-  },
-  { "route_id": "route_keke_awani_aye", "stop_id": "stop_aye", "sequence": 1 },
-  {
-    "route_id": "route_keke_awani_7_and_8",
-    "stop_id": "stop_awani",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_awani_7_and_8",
-    "stop_id": "stop_7_and_8",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_7_and_8_awani",
-    "stop_id": "stop_7_and_8",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_7_and_8_awani",
-    "stop_id": "stop_awani",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_oshodi_iyana_isolo",
-    "stop_id": "stop_oshodi",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_oshodi_iyana_isolo",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_iyana_isolo_oshodi",
-    "stop_id": "stop_iyana_isolo",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_iyana_isolo_oshodi",
-    "stop_id": "stop_oshodi",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_oshodi_cele",
-    "stop_id": "stop_oshodi",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_oshodi_cele",
-    "stop_id": "stop_cele",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_oshodi_isolo_market",
-    "stop_id": "stop_oshodi",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_oshodi_isolo_market",
-    "stop_id": "stop_isolo_market",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_cele_oshodi",
-    "stop_id": "stop_cele",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_cele_oshodi",
-    "stop_id": "stop_oshodi",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_bus_isolo_market_oshodi",
-    "stop_id": "stop_isolo_market",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_isolo_market_oshodi",
-    "stop_id": "stop_oshodi",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_ago_round_about_cele",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_ago_round_about_cele",
-    "stop_id": "stop_cele",
-    "sequence": 1
-  },
-  {
-    "route_id": "route_keke_cele_ago_round_about",
-    "stop_id": "stop_cele",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_keke_cele_ago_round_about",
-    "stop_id": "stop_ago_round_about",
-    "sequence": 1
-  },
-  { "route_id": "route_keke_ago_cele", "stop_id": "stop_ago", "sequence": 0 },
-  { "route_id": "route_keke_ago_cele", "stop_id": "stop_cele", "sequence": 1 },
-  { "route_id": "route_bus_cele_ago", "stop_id": "stop_cele", "sequence": 0 },
-  { "route_id": "route_bus_cele_ago", "stop_id": "stop_ago", "sequence": 1 },
-  { "route_id": "route_keke_cele_ago", "stop_id": "stop_cele", "sequence": 0 },
-  { "route_id": "route_keke_cele_ago", "stop_id": "stop_ago", "sequence": 1 },
-  { "route_id": "route_bus_ago_cele", "stop_id": "stop_ago", "sequence": 0 },
-  { "route_id": "route_bus_ago_cele", "stop_id": "stop_cele", "sequence": 1 },
-  {
-    "route_id": "route_bus_oshodi_cele_egbe",
-    "stop_id": "stop_oshodi",
-    "sequence": 0
-  },
-  {
-    "route_id": "route_bus_oshodi_cele_egbe",
-    "stop_id": "stop_cele_egbe",
-    "sequence": 1
+    "id": "route_bus_oshodi_cele_egbe",
+    "name": "Oshodi to Cele-Egbe",
+    "mode": "bus"
   }
 ]
